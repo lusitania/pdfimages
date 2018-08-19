@@ -1,5 +1,5 @@
 # expects: cygwin|Windows
-# call: winpty docker-compose.exe run --rm app pdfimages -all ./pdf/1.pdf ./pdf/1
+# call: USER=windowsusername docker-compose.exe run --rm app pdfimages -all ./pdf/1.pdf ./pdf/1
 #
 
 version: "3.4"
@@ -9,6 +9,6 @@ services:
     build: .
     volumes:
       # Windows only
-      - c:\Users:/home
+      - /c/Users:/home
     network_mode: bridge
     working_dir: /home/$USER/Documents
